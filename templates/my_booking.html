@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>complete responsive tour and travel agency website design tutorial</title>
+    
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+        <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+        <!-- custom css file link  -->
+        <link rel="stylesheet" href="css/style.css">
+    
+    </head>
+    {% load static %}
+    <body bgcolor="wheat">
+      <div class="col-md-8 mt-5">
+        <h2 align='center' class="bg bg-primary text-white text-center">My Booking</h2>
+        <table class="table table-hover table-bordered" border=1 align=center height=100% width=80% >
+            <thead>
+              <tr>
+                <th scope="col">name</th>
+                <th scope="col">where To</th>
+                <th scope="col">guest</th>
+                <th scope="col">arrivals</th>
+                <th scope="col">leaving</th>
+              </tr>
+            </thead>
+            <tbody>
+             {% for x in data  %}
+              <tr>
+                <td>{{x.name}}</td>
+                <td>{{x.where}}</td>
+                <td>{{x.guest}}</td>
+                <td>{{x.arrivals}}</td>
+                <td>{{x.leaving}}</td>
+
+                <td><a href="editform/{{x.id}}"><button class="btn btn-warning">edit</button></a></td>
+                <td><a href="/delete/{{x.id}}"><button class="btn btn-danger">Delete</button></a> </td> 
+              </tr>
+
+             {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <script src="" async defer></script>
+    </body>
+</html>
